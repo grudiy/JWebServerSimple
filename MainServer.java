@@ -23,16 +23,16 @@ public class MainServer {
             fromClient = srvSocket.accept();
             System.out.println("Client connected.");
 
-            BufferedReader in = new BufferedReader(
+            BufferedReader input = new BufferedReader(
                     new InputStreamReader(fromClient.getInputStream()) //read input stream from ready socket
             );
 
             System.out.println("Messages from Client: ");
-            String str = in.readLine();
+            String str = input.readLine();
 
             while (str != null) {
                 System.out.println(str);
-                str = in.readLine();
+                str = input.readLine();
             }
 
             System.out.println("Good bye!");
